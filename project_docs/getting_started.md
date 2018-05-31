@@ -23,11 +23,15 @@ https://www.youtube.com/watch?v=pyc3wWYoI8E
 1. Keeps processing all audio input for a wake word locally.
 2. Records speech(command) until silence detected or specified time has passed (default: 15 seconds).
 3. Sends the audio to cloud for processing.
-4. TBU (to-be-updated)
+4. Cloud server sends back the text transcript.
+5. Transcipt is parsed for finding the intent by matching with locally installed skills.
+6. Skill with highest confidence match gets triggered with the intent passed to its handler.
+7. Skill sends response on the bus for TTS.
+8. Mycroft goes to sleep mode again. (Waiting for wakeword)
 
 Sources:-
 [Steps 1 and 2](https://mycroft.ai/blog/what-is-artificial-intelligence-and-how-does-mycroft-fit/)
-
+[Steps 3 - 8](https://www.youtube.com/watch?v=pyc3wWYoI8E)
 #### How to use Mycroft?
 1. one can use the off the shelf Mark I or II with mycroft software and raspberry pi hardware.
 2. other way is to download the mycroft image and flash on a raspberry pi yourself. In this case, you have to use a compatible microphone and speaker with the r-pi.
