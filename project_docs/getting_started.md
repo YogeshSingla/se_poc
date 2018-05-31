@@ -8,7 +8,7 @@
 
 **mycroft is an open source voice assistant.**
 
-![Grid of products](images/research1.png)
+![Grid of products](images/research1.PNG)
 
 It is inspired by Google search engine philosophy of programmatic feedback loop and Wikipedia's open-source nature that allows anyone to contribute. Mycroft plans to use both these features in AI as programmatic feedback loop (eg. to automatically push user corrected code) and open-source nature(including data).
 
