@@ -9,6 +9,7 @@
 **mycroft is an open source voice assistant.**
 
 ![Grid of products](images/research1.PNG)
+<center> Source : https://www.youtube.com/watch?v=aG_qrmJxsWM </center>
 
 It is inspired by Google search engine philosophy of programmatic feedback loop and Wikipedia's open-source nature that allows anyone to contribute. Mycroft plans to use both these features in AI as programmatic feedback loop (eg. to automatically push user corrected code) and open-source nature(including data).
 
@@ -75,6 +76,17 @@ Head to the section of setup sound in this article:
 https://medium.com/snips-ai/build-a-weather-assistant-with-snips-4253541f1684
 ```
 ***
+### Setting up remote connection to raspberrypi
+
+Enable ssh and vnc in `Interfacing Options` in `rasp-config`.
+```
+sudo rasp-config
+```
+
+Then connect to the ip address of raspberrypi from remote machine.
+On Windows use **Putty** for ssh and **VNC viewer** for VNC.
+
+***
 ### Key-paths in the file system
 
 Logs at:
@@ -105,12 +117,3 @@ Anaconda3 path on Windows machine:
 C:\Users\sesaxxxxxx\AppData\Local\Continuum\anaconda3\
 ```
 ***
-### Setting up remote connection to raspberrypi
-
-Enable ssh and vnc in `Interfacing Options` in `rasp-config`.
-```
-sudo rasp-config
-```
-
-Then connect to the ip address of raspberrypi from remote machine.
-On Windows use **Putty** for ssh and **VNC viewer** for VNC.
