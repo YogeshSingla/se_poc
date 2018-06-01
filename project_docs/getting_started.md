@@ -62,6 +62,7 @@ Installation of picroft using windows:
 https://www.raspberrypi.org/documentation/installation/installing-images/windows.mds
 
 ***
+
 ### Installing a GUI on picroft image
 
 Install these packages in the machine and use `startx` in the terminal to start the GUI:
@@ -89,6 +90,16 @@ sudo rasp-config
 
 Then connect to the ip address of raspberrypi from remote machine.
 On Windows use **Putty** for ssh and **VNC viewer** for VNC.
+
+***
+### Mounting USB storage device on Raspberry Pi
+
+1. Find the device in `/dev/`. Remove and insert again to confirm which device file corresponds to the USB storage media.
+2. Create mount directory in `/mnt/<foldername>/` e.g `/mnt/usb/`.
+3. If sda is the device file then,
+```
+sudo mount /dev/sda /mnt/usb
+```
 
 ***
 ### Key-paths in the file system

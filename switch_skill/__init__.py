@@ -50,12 +50,13 @@ class TemplateSkill(MycroftSkill):
             self.count -= 1
         self.speak_dialog("count.is.now", data={"count": self.count})
 
+    #switch control code
     @intent_handler(IntentBuilder("").optionally("Switch").require("Control"))
     def handle_switch_control(self,message):
         if message.data["Control"] == "on":
             self.speak_dialog("switch.on")
         else:
-            self.speak_dialog("switch.off")   
+            self.speak_dialog("switch.off")
     # The "stop" method defines what Mycroft does when told to stop during
     # the skill's execution. In this case, since the skill's functionality
     # is extremely simple, there is no need to override it.  If you DO
