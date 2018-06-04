@@ -100,6 +100,10 @@ On Windows use **Putty** for ssh and **VNC viewer** for VNC.
 ```
 sudo mount /dev/sda /mnt/usb
 ```
+***
+### Disable skills in mycroft
+
+1. Locate mycroft.conf
 
 ***
 ### Key-paths in the file system
@@ -124,6 +128,14 @@ python packages of mycroft including adapt:
 ```
 /usr/local/lib/python2.7/site-packages/mycroft_core-18.2.5-py2.7egg/mycroft
 /usr/local/lib/python2.7/site-packages/adapt/
+```
+
+`mycroft.conf` file can be in these locations and written (hence overwritten) in order from Defaults to User. So, User path settings may overwrite others at the end.
+```
+mycroft-core/mycroft/configuration/mycroft.conf(Defaults)
+Mycroft Home (Remote)
+/etc/mycroft/mycroft.conf(Machine)
+$HOME/.mycroft/mycroft.conf(User)
 ```
 
 
