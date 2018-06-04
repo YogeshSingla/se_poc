@@ -1,2 +1,0 @@
-# Mycroft
-### Voice assistant PoC
