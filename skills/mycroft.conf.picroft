@@ -20,7 +20,7 @@
   },
   "skills":{
 	"directory":"~/.mycroft/skills",
-	"blacklisted_skills":[],
+	"blacklisted_skills":["skill-alarm","skill-audio-record","skill-configuration","skill-date-time", "skill-desktop-launcher"],
 	"priority_skills":["switch-control-skill"]
   }
 }
