@@ -1,0 +1,73 @@
+1. https://www.electromaker.io/blog/article/make-your-own-virtual-assistant-with-mycroft-47
+2. https://www.dvt.co.za/news-insights/insights/item/262-using-a-raspberry-pi-to-build-a-mycroft-ai-also-known-as-a-picroft
+
+Skill Development:
+1. https://community.mycroft.ai/t/creating-a-new-skill-walkthrough/644/3
+2. https://mycroft.ai/documentation/skills/introduction-developing-skills/
+
+Program
+1.https://smitchell556.github.io/CS-290/adapt_intro.html
+2.http://mycroft-core.readthedocs.io/en/stable/_modules/mycroft/skills/core.html
+3.http://mycroft-core.readthedocs.io/en/stable/_modules/mycroft/util/log.htm
+
+BLE on Rasp Pi3
+1. https://raspberrypi.stackexchange.com/questions/61758/does-rpi-3-have-ble-bluetooth-low-energy-bluetooth-4-0-bluetooth-smart
+2. https://elinux.org/RPi_Bluetooth_LE
+3. http://www.instructables.com/id/Control-Bluetooth-LE-Devices-From-A-Raspberry-Pi/
+4. https://mcuoneclipse.com/2016/12/19/tutorial-ble-pairing-the-raspberry-pi-3-model-b-with-hexiwear/
+5. https://www.jaredwolff.com/blog/get-started-with-bluetooth-low-energy/
+
+BLE on Home Assistant
+1. https://www.home-assistant.io/components/device_tracker.bluetooth_le_tracker/
+
+Home Assistant on Pi
+1. https://www.home-assistant.io/getting-started/
+
+Sample Project
+1. https://www.hackster.io/gov/hey-mycroft-turn-on-the-lamp-5e2d12
+
+Using OpenHAB
+1. https://docs.openhab.org/addons/ios/mycroft-skill/readme.html
+2. http://www.instructables.com/id/Installing-OpenHAB-on-Raspberry-Pi/
+
+Configuring Bluez
+1. https://learn.adafruit.com/install-bluez-on-the-raspberry-pi/installation
+2. https://scribles.net/updating-bluez-on-raspberry-pi-5-43-to-5-48/#Step01
+3. http://rrbluetoothx.blogspot.in/2016/04/rr-bluetooth-compile-bluez-539.html
+4. http://www.pc-freak.net/blog/downgrade-package-apt-get-debian-ubuntu-mint-linux/
+5. https://sansknowledge.wordpress.com/2014/12/02/temporary-failure-resolving-mirrordirectory-raspbian-org/
+6. https://www.raspberrypi.org/forums/viewtopic.php?t=17016
+
+Unmasking a Service
+1. https://askubuntu.com/questions/804946/systemctl-how-to-unmask
+
+Configuring dbus
+1. https://www.unix.com/unix-for-beginners-questions-and-answers/262279-d-bus-failed-connect-socket.html
+
+Connecting to Bluetooth
+1. https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
+
+Bluetooth in ArchLinux
+1. https://wiki.archlinux.org/index.php/bluetooth
+
+Bluetooth Latest
+1. https://raspberrypi.stackexchange.com/questions/66540/installing-bluez-5-44-onto-raspbian
+2. https://raspberrypi.stackexchange.com/questions/71333/bluetooth-does-not-work-with-raspbian-stretch-and-raspberry-pi-3
+
+hcitool scan and inq
+1. https://stackoverflow.com/questions/26467593/difference-between-hcitool-scan-and-inq
+
+hciuart service
+1. https://github.com/MycroftAI/enclosure-picroft/issues/31
+
+Bluetooth commands
+1. http://www.raspberry-projects.com/pi/pi-operating-systems/raspbian/bluetooth/bluetooth-commands
+
+UART and stuff
+1. https://itra.medialabasia.in/data/Documents/HumanSense/publications/Design%20&%20Development%20of%20Daughter%20Board%20for%20Raspberry%20Pi%20to%20support%20Bluetooth%20Communication%20using%20UART.pdf
+
+Gatttool
+1. https://stackoverflow.com/questions/32947807/cannot-connect-to-ble-device-on-raspberry-pi
+
+Bluetooth Communication
+1. https://people.csail.mit.edu/albert/bluez-intro/index.html
