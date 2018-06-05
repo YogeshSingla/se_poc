@@ -1,1 +1,0 @@
-# Voice Control with Mycroft
