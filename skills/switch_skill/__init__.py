@@ -11,6 +11,9 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import LOG
 
+#os module for shell commands in python
+import os
+
 # Each skill is contained within its own class, which inherits base methods
 # from the MycroftSkill class.  You extend this class as shown below.
 
@@ -40,7 +43,14 @@ class TemplateSkill(MycroftSkill):
         # In this case, respond by simply speaking a canned response.
         # Mycroft will randomly speak one of the lines from the file
         #    dialogs/en-us/hello.world.dialog
-        self.speak_dialog("hello.world")
+        #self.speak_dialog("hello.world")
+        dir = os.popen("ls").readlines()
+        #ls_str = ''.join(dir)
+        self.speak("yogesh")
+        self.speak("the files in current folder are :")
+        #self.speak(ls_str.split(" "))
+        for ls_file in dir:
+            self.speak(ls_file)
 
     @intent_handler(IntentBuilder("").require("Count").require("Dir"))
     def handle_count_intent(self, message):

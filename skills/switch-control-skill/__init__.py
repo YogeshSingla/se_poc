@@ -8,11 +8,10 @@ class SwitchControl(MycroftSkill):
 
     @intent_file_handler('control.switch.intent')
     def handle_control_switch(self, message):
-	print("Before speaking, writing. Control switch will be printed after speak dialog")
+        self.speak("Before speaking, writing. Control switch will be printed after speak dialog")
         self.speak_dialog('control.switch')
-	print("Controlling Switch!!!!!!!!!!!!!!!!!!!!!!!!")
+        self.speak("Controlling Switch!!!!!!!!!!!!!!!!!!!!!!!!")
 
 
 def create_skill():
     return SwitchControl()
-
