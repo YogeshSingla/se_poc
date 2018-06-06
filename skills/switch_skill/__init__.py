@@ -38,35 +38,61 @@ class TemplateSkill(MycroftSkill):
     #   'Hello world'
     #   'Howdy you great big world'
     #   'Greetings planet earth'
-    @intent_handler(IntentBuilder("").require("Hello").require("World"))
-    def handle_hello_world_intent(self, message):
-        # In this case, respond by simply speaking a canned response.
-        # Mycroft will randomly speak one of the lines from the file
-        #    dialogs/en-us/hello.world.dialog
-        #self.speak_dialog("hello.world")
-        dir = os.popen("ls").readlines()
-        #ls_str = ''.join(dir)
-        self.speak("yogesh")
-        self.speak("the files in current folder are :")
-        #self.speak(ls_str.split(" "))
-        for ls_file in dir:
-            self.speak(ls_file)
+    
+    # @intent_handler(IntentBuilder("").require("Hello").require("World"))
+    # def handle_hello_world_intent(self, message):
+    #     # In this case, respond by simply speaking a canned response.
+    #     # Mycroft will randomly speak one of the lines from the file
+    #     #    dialogs/en-us/hello.world.dialog
+    #     #self.speak_dialog("hello.world")
+    #     dir = os.popen("ls").readlines()
+    #     #ls_str = ''.join(dir)
+    #     self.speak("yogesh")
+    #     self.speak("the files in current folder are :")
+    #     #self.speak(ls_str.split(" "))
+    #     for ls_file in dir:
+    #         self.speak(ls_file)
 
-    @intent_handler(IntentBuilder("").require("Count").require("Dir"))
-    def handle_count_intent(self, message):
-        if message.data["Dir"] == "up":
-            self.count += 1
-        else:  # assume "down"
-            self.count -= 1
-        self.speak_dialog("count.is.now", data={"count": self.count})
+    # @intent_handler(IntentBuilder("").require("Count").require("Dir"))
+    # def handle_count_intent(self, message):
+    #     if message.data["Dir"] == "up":
+    #         self.count += 1
+    #     else:  # assume "down"
+    #         self.count -= 1
+    #     self.speak_dialog("count.is.now", data={"count": self.count})
 
-    #switch control code
+    #scan for devices
+    @intent_handler(IntentBuilder("").require("Scan_on"))
+    def handle_scan_on_intent(self,message):
+        self.speak("Starting scan ...")
+    @intent_handler(IntentBuilder("").require("Scan_off"))
+    def handle_scan_off_intent(self,message):
+        self.speak("Stoping scan...")
+
+    #connecting to device
+    @intent_handler(IntentBuilder("").require("List_devices"))
+    def handle_list_devices(self,message):
+        #TODO:store available devices 
+
+        self.speak("Listing the devices available for BLE connection")
+
+    @intent_handler(IntentBuilder("").require("Connect_device"))
+    def handle_connect_device(self,message):
+        #TODO:Connect_device.voc should be able to recognise the device name to be connected. This cannot be hardcoded.
+        #TODO:name contains the device found during scan which user wants to connect to.
+        name = "se"
+        self.speak("Connecting to {}".format(name))
+
+    #switch control 
     @intent_handler(IntentBuilder("").optionally("Switch").require("Control"))
     def handle_switch_control(self,message):
         if message.data["Control"] == "on":
             self.speak_dialog("switch.on")
         else:
             self.speak_dialog("switch.off")
+
+    
+    
     # The "stop" method defines what Mycroft does when told to stop during
     # the skill's execution. In this case, since the skill's functionality
     # is extremely simple, there is no need to override it.  If you DO

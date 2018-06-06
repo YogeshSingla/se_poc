@@ -4,9 +4,27 @@
 ## Index
 1. *project_docs* :  collection of project related documentation
 2. *skills* : list of custom skills developed for mycroft
+3. *Adafruit_Python_BluefruitLE-master* : Python library to access Bluefruit BLE
 
 ## Requirements
 * Raspberry Pi 3
 * Microphone
 * Speaker
 * BLE switch
+
+
+## BLE
+
+### pybluez
+Install bluetooth header files:
+```
+sudo apt-get install libbluetooth-dev
+```
+Install pybluez
+```
+sudo pip install pybluez
+```
+
+Source:
+* [Learning material](https://people.csail.mit.edu/albert/bluez-intro/c212.html)
+* [Commands](https://gist.github.com/lexruee/fa2e55aab4380cf266fb)
