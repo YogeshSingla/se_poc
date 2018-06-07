@@ -48,7 +48,9 @@ Install pybluez
 ```
 sudo pip install pybluez
 ```
-
-Source:
+***
+###### Sources:
 * [Learning material](https://people.csail.mit.edu/albert/bluez-intro/c212.html)
 * [Commands](https://gist.github.com/lexruee/fa2e55aab4380cf266fb)
+* [pybluez-Google Code  (obsolete)](https://code.google.com/archive/p/pybluez/)
+* [pybluez-Github (active)](https://github.com/karulis/pybluez)
