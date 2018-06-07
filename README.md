@@ -11,20 +11,3 @@
 * Microphone
 * Speaker
 * BLE switch
-
-
-## BLE
-
-### pybluez
-Install bluetooth header files:
-```
-sudo apt-get install libbluetooth-dev
-```
-Install pybluez
-```
-sudo pip install pybluez
-```
-
-Source:
-* [Learning material](https://people.csail.mit.edu/albert/bluez-intro/c212.html)
-* [Commands](https://gist.github.com/lexruee/fa2e55aab4380cf266fb)
