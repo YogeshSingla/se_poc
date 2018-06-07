@@ -20,3 +20,6 @@ https://www.youtube.com/watch?v=fEx2V5y-Egk
 ### Associated
 ##### DeepSpeech at Mozilla being used in Mycroft for STT
 https://research.mozilla.org/machine-learning/
+
+##### Understanding the working of D-Bus - mechanism to communicate between processes
+https://en.wikipedia.org/wiki/D-Bus

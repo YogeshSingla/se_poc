@@ -1,3 +1,20 @@
+## Bluetooth theory
+
+#### Background
+1. From the hardware module up, we have preinstalled libraries that interface with it. **Bluez** is the official Bluetooth protocol stack for GNU/Linux. **Pybluez** is built on top of it as an extension library to use bluez inside python. [**BLESuite**](https://github.com/nccgroup/BLESuite) is built using pybluez and pygattlib(BLE support library with pybluez) to make bluetooth programming in python even easier.
+2. Alternative to bluez is **Affix**, which is another bluetooth protocol stack having pyaffix extension library.  
+*We will stick to bluez and pybluez in following document.*
+
+#### Discovery
+1. In Bluetooth, where there are no nameservers, a client will broadcast inquiries to see what other devices are nearby.
+2. Query each detected device for its user-friendly name.
+3. The client then chooses whichever device has a name that matches the one supplied by the user.  
+[source](https://people.csail.mit.edu/albert/bluez-intro/x79.html)
+
+#### Connection
+1. Decide upon transport protocol. RFCOMM (Radio Frequency Communication) works like TCP in Internet programming. L2CAP (Logicial Link Control and Adaptation Protocol) in Bluetooth programming is similar to UDP in Internet programming.
+2. Choose the port in a predefined manner (similar to how internal ports are used. For e.g 443 for HTTPS etc). Or else, use Service Discovery Protocol (SDP) to search for available services (ports) through Universally Unique Identifier (UUID) during runtime and connect to them. Second, option is relatively complex but scalable and recommended.
+
 ## Steps to configure BLE on new Raspberry Pi
 
 #### Enable BLE
@@ -18,7 +35,8 @@ sudo systemctl restart bluetooth
 ```
 You can check the status using `sudo systemctl status bluetooth` and verify that the flag is set.
 
-#### Install Python BLE library
+#### Install pybluez
+###### (python Bluetooth library)
 For some reason, `http://archive.raspberrypi.org/debian/` source is down. Hence, you might have to change the source.
 ```
 cd /etc/apt/sources.list.d/
@@ -48,6 +66,21 @@ Install pybluez
 ```
 sudo pip install pybluez
 ```
+
+#### Install pygattlib
+###### (python BLE library)
+```
+git clone https://github.com/pybluez/pygattlib
+cd pygattlib
+make
+sudo python setup.py install
+```
+Make sure to install all dependencies manually listed in `DEPENDS` file in root of the repository.
+Use:
+```
+sudo apt install <dependency_name>
+```
+
 ***
 ###### Sources:
 * [Learning material](https://people.csail.mit.edu/albert/bluez-intro/c212.html)
