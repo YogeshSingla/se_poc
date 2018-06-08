@@ -67,20 +67,6 @@ Install pybluez
 sudo pip install pybluez
 ```
 
-#### Install pygattlib
-###### (python BLE library)
-```
-git clone https://github.com/pybluez/pygattlib
-cd pygattlib
-make
-sudo python setup.py install
-```
-Make sure to install all dependencies manually listed in `DEPENDS` file in root of the repository.
-Use:
-```
-sudo apt install <dependency_name>
-```
-
 ***
 ###### Sources:
 * [Learning material](https://people.csail.mit.edu/albert/bluez-intro/c212.html)
