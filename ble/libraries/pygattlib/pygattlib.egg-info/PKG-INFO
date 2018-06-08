@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pygattlib
+Version: 0.0.4
+Summary: Library to access Bluetooth LE devices. Fork of https://bitbucket.org/OscarAcena/pygattlib.
+Home-page: https://github.com/danielunderwood/pygattlib
+Author: Daniel Underwood
+Author-email: daniel.underwood13@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
