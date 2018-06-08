@@ -48,6 +48,7 @@ Install pybluez
 ```
 sudo pip install pybluez
 ```
+
 ***
 ###### Sources:
 * [Learning material](https://people.csail.mit.edu/albert/bluez-intro/c212.html)
