@@ -57,7 +57,7 @@ If you want to compile for Python 3, you need to:
 
 Then, to install, just:
 
-    $ sudo python setup.py
+    $ sudo python setup.py install
 
 Usage
 =====

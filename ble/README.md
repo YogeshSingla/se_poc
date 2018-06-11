@@ -70,10 +70,14 @@ sudo pip install pybluez
 #### Install pygattlib
 ###### (python ble library)
 
-Download `/ble/libraries/pygattlib/` or clone the entire repository and head to `pygattlib` folder. 
+Download `/ble/libraries/pygattlib/` or clone the entire repository and head to `pygattlib` folder.
 
 Follow the steps given in `/ble/libraries/pygattlib/README.md`
 
+#### Install bluepy
+###### (API build on top of pybluez and pygattlib)
+
+Similar to steps for pygattlib. Use the `bluepy` folder.
 ***
 ###### Sources:
 * [Learning material](https://people.csail.mit.edu/albert/bluez-intro/c212.html)
