@@ -1,0 +1,27 @@
+{
+  "play_wav_cmdline": "aplay -Dhw:0,0 %1",
+  "play_mp3_cmdline": "mpg123 -a hw:0,0 %1",
+  "enclosure": {
+    "platform": "picroft"
+  },
+  "tts": {
+    "mimic": {
+      "path": "/usr/local/bin/mimic"
+    }
+  },
+  "ipc_path": "/ramdisk/mycroft/ipc/",
+  "hotwords": {
+    "hey mycroft": {
+      "module": "precise"
+    }
+  },
+  "SkillInstallerSkill": {
+    "path": "/opt/venvs/mycroft-core/bin/msm"
+  },
+  "skills":{
+	"directory":"~/.mycroft/skills",
+	"blacklisted_skills":[ "skill-desktop-launcher"],
+	"priority_skills":["switch_skill"]
+  },
+  "ipc_path": "/ramdisk/mycroft/ipc/"
+}
