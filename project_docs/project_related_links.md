@@ -1,5 +1,11 @@
 ## Links to resources related to project
 ### Main project
+##### Using DeepSpeech for STT
+https://github.com/MycroftAI/mycroft-core/pull/1503
+
+##### Setting up own 'home' for Mycroft
+https://github.com/MycroftAI/mycroft-core/issues/1569
+
 ##### Visualise spectrogram:  
 https://musiclab.chromeexperiments.com/Spectrogram/
 
