@@ -12,12 +12,12 @@ from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import LOG
 
 #import ble library
-import sys
-sys.path.insert(0,"/usr/local/lib/python3.5/dist-packages/")
-from bluepy import btle
+# import sys
+# sys.path.insert(0,"/usr/local/lib/python3.5/dist-packages/")
+# from bluepy import btle
 
 #TODO: Add discovery functionality instead of hardcoded macid
-DEVICE_MAC_ID = "38:A4:ED:CC:85:BE"		#yogesh's Mi MAX
+#DEVICE_MAC_ID = "38:A4:ED:CC:85:BE"		#yogesh's Mi MAX
 
 #os module for shell commands in python
 import os
@@ -46,7 +46,7 @@ class TemplateSkill(MycroftSkill):
 	#   'Hello world'
 	#   'Howdy you great big world'
 	#   'Greetings planet earth'
-	
+
 	# @intent_handler(IntentBuilder("").require("Hello").require("World"))
 	# def handle_hello_world_intent(self, message):
 	#     # In this case, respond by simply speaking a canned response.
@@ -80,14 +80,14 @@ class TemplateSkill(MycroftSkill):
 	#connecting to device
 	@intent_handler(IntentBuilder("").require("List_devices"))
 	def handle_list_devices(self,message):
-		#TODO:store available devices 
+		#TODO:store available devices
 
 		self.speak("Listing the devices available for BLE connection")
 
 	#connecting to device
 	@intent_handler(IntentBuilder("").require("List_devices"))
 	def handle_switch_control(self,message):
-		#TODO:store available devices 
+		#TODO:store available devices
 
 		self.speak("Listing the devices available for BLE connection")
 		ch = service.getCharateristics()
@@ -96,34 +96,68 @@ class TemplateSkill(MycroftSkill):
 
 
 	#@intent_handler(IntentBuilder("").require("Connect_device"))
+	# @intent_handler(IntentBuilder("").require("Control"))
+	# def handle_connect_device(self,message):
+	# 	#TODO:Connect_device.voc should be able to recognise the device name to be connected. This cannot be hardcoded.
+	# 	#TODO:name contains the device found during scan which user wants to connect to.
+	# 	self.speak("Connecting to {}".format(DEVICE_MAC_ID))
+	# 	#connect to device
+	# 	#print("Trying to connect to {}".format(DEVICE_MAC_ID))
+	# 	dev = btle.Peripheral(DEVICE_MAC_ID)
+	# 	#find services
+	# 	#print("Finding services ...")
+	# 	#for svc in dev.services:
+	# 	#print str(svc)
+	# 	#self.speak(str(svc))
+	# 	svc_uuid = btle.UUID("0000180d-0000-1000-8000-00805f9b34fc")
+	# 	service = dev.getServiceByUUID(svc_uuid)
+	# 	self.speak("Listing the devices available for BLE connection")
+	# 	ch = service.getCharacteristics()
+	# 	val = ch[0].read()
+	# 	if message.data["Control"] == "on":
+	# 		ch[0].write(b'on')
+	# 	else:
+	# 		ch[0].write(b'off')
+	# 	#ch[0].write(b'off')
+
 	@intent_handler(IntentBuilder("").require("Control"))
 	def handle_connect_device(self,message):
-		#TODO:Connect_device.voc should be able to recognise the device name to be connected. This cannot be hardcoded.
-		#TODO:name contains the device found during scan which user wants to connect to.
-		self.speak("Connecting to {}".format(DEVICE_MAC_ID))
-		#connect to device
-		#print("Trying to connect to {}".format(DEVICE_MAC_ID))
-		dev = btle.Peripheral(DEVICE_MAC_ID)
-		#find services
-		#print("Finding services ...")
-		#for svc in dev.services:
-		#print str(svc)
-		#self.speak(str(svc))
-		svc_uuid = btle.UUID("0000180d-0000-1000-8000-00805f9b34fc")
-		service = dev.getServiceByUUID(svc_uuid)
-		self.speak("Listing the devices available for BLE connection")
-		ch = service.getCharacteristics()
-		val = ch[0].read()
-		if message.data["Control"] == "on":
-			ch[0].write(b'on')
-		else:
-			ch[0].write(b'off')
-		#ch[0].write(b'off')
+		from bluetooth import *
+		import sys
 
-	#switch control 
+		addr ="B8:27:EB:70:6D:65"
+
+		# search for the SampleServer service
+		uuid = "94f39d29-7d6d-437d-973b-fba39e49d4ee"
+		service_matches = find_service( uuid = uuid, address = addr )
+
+		if len(service_matches) == 0:
+		#    print "couldn't find the SampleServer service =("
+		    sys.exit(0)
+
+		first_match = service_matches[0]
+		port = first_match["port"]
+		name = first_match["name"]
+		host = first_match["host"]
+
+		#print "connecting to \"%s\" on %s" % (name, host)
+		# Create the client socket
+		sock=BluetoothSocket( RFCOMM )
+		sock.connect((host, port))
+
+		#print "connected.  type stuff"
+		while True:
+		    data = raw_input()
+		    if len(data) == 0: break
+		    sock.send(data)
+
+		sock.close()
+
+
+	#switch control
 	#@intent_handler(IntentBuilder("").optionally("Switch").require("Control"))
 	#def handle_switch_control(self,message):
-		#self.speak("h")			
+		#self.speak("h")
 		#ch = service.getCharacteristics()
 		#print str(ch)
 		#val = ch.read()
@@ -139,7 +173,7 @@ class TemplateSkill(MycroftSkill):
 		#	ch.write("off")
 
 
-	
+
 	# The "stop" method defines what Mycroft does when told to stop during
 	# the skill's execution. In this case, since the skill's functionality
 	# is extremely simple, there is no need to override it.  If you DO
